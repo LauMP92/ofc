@@ -15,6 +15,11 @@ public class Run {
 		animal = new Gato();
 		animal.hablar();
 		
+		animal = new Gato("jojojo");
+		animal.hablar();
+		
+		animal = new Gato("hjjhgjfgdf");
+		animal.hablar();
 	}
 
 }
