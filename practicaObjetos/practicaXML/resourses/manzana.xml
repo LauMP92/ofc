@@ -12,10 +12,10 @@
 
 	<servicios>
 	
-		<servicios>luz</servicios>
-		<servicios>agua</servicios>
-		<servicios>gas</servicios>
-		<servicios>telefono</servicios>
+		<servicio>luz</servicio>
+		<servicio>agua</servicio>
+		<servicio>gas</servicio>
+		<servicio>telefono</servicio>
 	
 	</servicios>
 	

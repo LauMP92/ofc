@@ -23,27 +23,57 @@ public class Inmobiliaria {
 			System.out.println("Elemento raiz:" + document.getDocumentElement().getNodeName());
 			Node manzanaNodo = document.getFirstChild();
 			Element manzanaElement = (Element) manzanaNodo; 
-			String localidad = manzanaElement.getAttribute("localidad");
-			System.out.println("la localidad es " + localidad);
-			String provincia = manzanaElement.getAttribute("provincia");
-			System.out.println("la provincia es " + provincia);
-			NodeList casasRaiz =manzanaElement.getElementsByTagName("casas");
-			Node casasNode = casasRaiz.item(0);
-			Element casasElement = (Element) casasNode;
-			NodeList casaNodes = casasElement.getElementsByTagName("casa");
-			for (int i = 0; i < casaNodes.getLength(); i++) {
-				Node casaNode = casaNodes.item(i);
-				Element casaElement = (Element) casaNode;
-				String direccion = casaElement.getAttribute("direccion");
-				System.out.println("la direccion " + i + " es " + direccion);
 			
-			}
+			imprimirAtributoDeNode(manzanaNodo, "localidad");
+			imprimirAtributoDeNode(manzanaNodo, "provincia");
+			
+			imprimirNodosHijos(manzanaElement,"callesCircundantes","calleCircundante");
+			imprimirNodosHijos(manzanaElement,"servicios","servicio");
+			imprimirCasas(manzanaElement);
 			
 			//TODO agregar elemento nuevo y inprimirlo.
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
+	}
+
+	private static void imprimirCasas(Element manzanaElement) {
+		NodeList casas = manzanaElement.getElementsByTagName("casas");
+		Node casasNode = casas.item(0);
+		Element casasElement = (Element) casasNode;
+		NodeList casaNodes = casasElement.getElementsByTagName("casa");
+		for (int i = 0; i < casaNodes.getLength(); i++) {
+			Node casaNode = casaNodes.item(i);
+			System.out.println("-------------------- ");
+			System.out.println("la direccion " + i );
+			imprimirAtributoDeNode(casaNode, "direccion");
+			imprimirAtributoDeNode(casaNode, "diametroTerreno");
+			imprimirAtributoDeNode(casaNode, "entrada");
+			imprimirAtributoDeNode(casaNode, "hambientes");
+			System.out.println("-------------------- ");
+		
+		}
+	}
+
+	private static void imprimirNodosHijos(Element rootElement, String nodoPadreName,String nodoHijoName) {
+		NodeList nodosPadre = rootElement.getElementsByTagName( nodoPadreName);
+		Node nodoPadre = nodosPadre.item(0);
+		Element padreElement = (Element) nodoPadre;
+		NodeList padreNodes = padreElement.getElementsByTagName(nodoHijoName);
+		for (int i = 0; i < padreNodes.getLength(); i++) {
+			Node hijoNode = padreNodes.item(i);
+			System.out.println("-------------------- ");
+			System.out.println("el valor del nodo " + nodoHijoName +i  + " es " + hijoNode.getTextContent());
+			System.out.println("-------------------- ");
+		
+		}
+	}
+	
+	private static void imprimirAtributoDeNode(Node node, String attrName) {
+		Element element = (Element) node;
+		String value = element .getAttribute(attrName);
+		System.out.println("el attributo " + attrName + " es " + value);
 	}
 
 }
