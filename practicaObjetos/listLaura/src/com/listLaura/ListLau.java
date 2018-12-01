@@ -29,7 +29,13 @@ public class ListLau {
 		for (String palabra : palabras) {
 			System.out.println(palabra);
 			
+			
 		}
+		String aux=palabras.get(0);
+		palabras.set(0, palabras.get(1));
+		palabras.set(1, aux);
+		
+		
 		
 	}
 

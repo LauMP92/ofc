@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<manzana localidad="moron" provincia="bs.as">
+
+	<callesCircundantes>
+	
+		<calleCircundante>Zapiola</calleCircundante>
+		<calleCircundante>VBustos</calleCircundante>
+		<calleCircundante>Mendeville</calleCircundante>
+		<calleCircundante> Villanueva </calleCircundante>
+		
+	</callesCircundantes>
+
+	<servicios>
+	
+		<servicios>luz</servicios>
+		<servicios>agua</servicios>
+		<servicios>gas</servicios>
+		<servicios>telefono</servicios>
+	
+	</servicios>
+	
+	<casas> 
+	
+		<casa diametroTerreno="50.8" entrada="2" direccion="v.bustos 1975" hambientes="5" ></casa>
+		
+		<casa diametroTerreno="68.9" entrada="2" direccion="zapiola 2234" hambientes="3" ></casa>
+		
+		<casa diametroTerreno="79.3" entrada="1" direccion="villanueva 1945" hambientes="4" />
+
+	</casas>
+
+</manzana>
+
+
